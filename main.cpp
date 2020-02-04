@@ -1,26 +1,31 @@
 #include <Windows.h>
 #include <iostream>
 #include "logger.h"
+#include "timer.h"
 
 void main()
 {
+	Logger logger("Time");
+	Timer loopTimer;
 
-	Logger logger("Aviso");
+	for (int i = 0; i < 20000000; i++)
+	{
+		int a = 5;
+		a = a * a;
+	}
 
-	logger.Log(std::string("Hello World!"),Logger::Type::Custom);
-	
-	logger.Log("Type the new custom name:");
-	
-	std::string newName;
-	std::cin >> newName;
+	unsigned int processTime = loopTimer.Mark();
 
-	logger.ChangeCustomType(newName);
+	std::cout << "The process time was: " << processTime << " ms." << std::endl;
 
-	logger.Log("This is the new custom type name " + newName, Logger::Type::Custom);
+	for (int i = 0; i < 20000000; i++)
+	{
+		int a = 5;
+		a = a * a;
+	}
 
+	std::cout << "The process time was: " << processTime << " ms." << std::endl;
 
-	logger.NewLines(3);
-	logger.Log("Press space to exit...");
 	while (!GetAsyncKeyState(VK_SPACE))
 	{
 	}
