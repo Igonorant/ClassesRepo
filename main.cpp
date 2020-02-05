@@ -1,30 +1,29 @@
 #include <Windows.h>
 #include <iostream>
+#include <math.h>
 #include "logger.h"
 #include "timer.h"
 
 void main()
 {
-	Logger logger("Time");
+	Logger logger("Time (ms)");
 	Timer loopTimer;
 
-	for (int i = 0; i < 20000000; i++)
+	for (int i = 0; i < 10000000; i++)
 	{
-		int a = 5;
-		a = a * a;
+		float a = std::sin(i);
 	}
 
-	unsigned int processTime = loopTimer.Mark();
+	logger.Log(std::to_string(loopTimer.Mark()), Logger::Type::Custom);
 
-	std::cout << "The process time was: " << processTime << " ms." << std::endl;
 
-	for (int i = 0; i < 20000000; i++)
+	for (int i = 0; i < 10000000; i++)
 	{
-		int a = 5;
-		a = a * a;
+		float a = std::sin(i);
 	}
 
-	std::cout << "The process time was: " << processTime << " ms." << std::endl;
+
+	logger.Log(loopTimer.Mark());
 
 	while (!GetAsyncKeyState(VK_SPACE))
 	{

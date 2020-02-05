@@ -1,12 +1,13 @@
 #include "logger.h"
 
-Logger::Logger(const std::string &customType)
+Logger::Logger(const std::string& customType, bool setCustomToDefault)
 	:
-	customType(customType)
+	customType(customType),
+	customIsDefault(setCustomToDefault)
 {
 }
 
-void Logger::Log(const std::string &message, Type type)
+void Logger::Log(const std::string& message, Type type)
 {
 
 	switch (type)
@@ -28,6 +29,18 @@ void Logger::Log(const std::string &message, Type type)
 		break;
 	}
 
+}
+
+void Logger::Log(const std::string& message)
+{
+	if (customIsDefault)
+	{
+		Log(message, Type::Custom);
+	}
+	else
+	{
+		Log(message, Type::Info);
+	}
 }
 
 void Logger::NewLines(int nLines, const std::string& filling)
