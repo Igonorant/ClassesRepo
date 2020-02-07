@@ -20,24 +20,50 @@ public:
 	}
 	Logger(const std::string& customType, bool setCustomToDefault = true);
 
-	// log for string
-	void Log(const std::string& message, Type type);
-	void Log(const std::string& message);
-	
-	// log for any type supported by to_string
+
 	template <class anyType>
 	void Log(const anyType& message, Type type)
 	{
-		Log(std::to_string(message), type);
+		switch (type)
+				{
+				case Type::Info:
+					std::cout << message << std::endl;
+					break;
+			
+				case Type::Warning:
+					std::cout << "[Warning] " << message << std::endl;
+					break;
+			
+				case Type::Error:
+					std::cout << "[Error] " << message << std::endl;
+					break;
+			
+				case Type::Custom:
+					std::cout << "[" << customType << "] " << message << std::endl;
+					break;
+				}
 	}
 	template <class anyType>
 	void Log(const anyType& message)
 	{
-		Log(std::to_string(message));
+			if (customIsDefault)
+	{
+		Log(message, Type::Custom);
+	}
+	else
+	{
+		Log(message, Type::Info);
+	}
 	}
 
-
-	void NewLines(int nLines, const std::string& filling);
+	template <class anyType>
+	void NewLines(int nLines, const anyType& filling = "")
+	{
+		for (int n = 0; n < nLines; n++)
+		{
+			std::cout << filling << std::endl;
+		}
+	}
 	void NewLines(int nLines);
 	void NewLine()
 	{

@@ -30,7 +30,13 @@ void main()
 		float a = std::sin(i);
 	}
 
-	logger.Log(std::to_string(loopTimer.Mark()), Logger::Type::Custom);
+	logger.Log(loopTimer.Mark(), Logger::Type::Custom);
+	logger.Log("Teste");
+	logger.NewLine();
+	logger.NewLines(3);
+	logger.NewLines(4, 1);
+	logger.NewLines(3, "aaaaa");
+	logger.NewLines(3);
 
 	int* a = NEW int[50];
 
