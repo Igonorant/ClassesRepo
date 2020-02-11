@@ -16,38 +16,28 @@
 #include "logger.h"
 #include "timer.h"
 
-void main()
+// SDL2 include
+#include "SDL.h"
+//#undef main
+
+int main(int argc, char* argv[])
 {
 	// Memory leak detection
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_DEBUG);
 
-	Logger logger("Time (ms)");
-	Timer loopTimer;
+	// SDL initialization
+	SDL_Init(SDL_INIT_EVERYTHING);
 
-	for (int i = 0; i < 10000000; i++)
-	{
-		float a = std::sin(i);
-	}
+	// SDL create window and renderer
+	SDL_Window* window = SDL_CreateWindow("Main", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 400, SDL_WINDOW_SHOWN);
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 
-	logger.Log(loopTimer.Mark(), Logger::Type::Custom);
-	logger.Log("Teste");
-	logger.NewLine();
-	logger.NewLines(3);
-	logger.NewLines(4, 1);
-	logger.NewLines(3, "aaaaa");
-	logger.NewLines(3);
+	// Test
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderClear(renderer);
+	SDL_RenderPresent(renderer);
+	SDL_Delay(3000);
 
-	int* a = NEW int[50];
-
-	for (int i = 0; i < 10000000; i++)
-	{
-		float a = std::sin(i);
-	}
-
-
-	logger.Log(loopTimer.Mark());
-
-	std::cin.get();
-
+	return 0;
 }

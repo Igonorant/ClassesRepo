@@ -295,10 +295,7 @@
     <None Include="sdl2\include\SDL_config_macosx.h.orig">
       <Filter>SDL2</Filter>
     </None>
-    <None Include="sdl2\lib\x64\SDL2.dll">
-      <Filter>SDL2</Filter>
-    </None>
-    <None Include="sdl2\lib\x86\SDL2.dll">
+    <None Include="SDL2.dll">
       <Filter>SDL2</Filter>
     </None>
   </ItemGroup>
@@ -307,12 +304,6 @@
       <Filter>SDL2</Filter>
     </Library>
     <Library Include="sdl2\lib\x64\SDL2main.lib">
-      <Filter>SDL2</Filter>
-    </Library>
-    <Library Include="sdl2\lib\x86\SDL2.lib">
-      <Filter>SDL2</Filter>
-    </Library>
-    <Library Include="sdl2\lib\x86\SDL2main.lib">
       <Filter>SDL2</Filter>
     </Library>
   </ItemGroup>
