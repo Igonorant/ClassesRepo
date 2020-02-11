@@ -21,7 +21,10 @@ mono_crash.*
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
+
+# Removed x64 to include SDL libs to git 
+# x64/
+
 x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
