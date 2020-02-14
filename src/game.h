@@ -2,6 +2,7 @@
 
 #include "SDL.h"
 #include "logger.h"
+#include <math.h>
 
 
 class Game
@@ -14,7 +15,8 @@ public:
 		NotInitialized,
 		Initialized,
 		Paused,
-		Running
+		Running,
+		Quitting
 	};
 
 public:
@@ -29,12 +31,19 @@ public:
 	void Render();
 	void Clean();
 
-	bool isRunning();
+	bool IsRunning();
+	bool IsInitialized();
+	State GetState();
+	void SetState(State newState);
 
 private:
 	State state = State::NotInitialized;
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
-	Logger logger = Logger::Logger("SDL2 Game");
+	Logger sdlLogger = Logger("SDL2 Game");
+	Logger eventLogger = Logger("Event");
+	Logger updateLogger = Logger("Update");
 
+	// Test variable
+	int count = 0;
 };
