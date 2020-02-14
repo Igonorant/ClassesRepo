@@ -1,7 +1,6 @@
 #pragma once
-
-#include <iostream>
-#include <string>
+#include "pch.h"
+// iostream, string
 
 class Logger
 {

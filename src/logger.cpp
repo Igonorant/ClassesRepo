@@ -1,3 +1,4 @@
+#include <pch.h>
 #include "logger.h"
 
 Logger::Logger(const std::string& customType, bool setCustomToDefault)

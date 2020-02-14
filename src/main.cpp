@@ -1,23 +1,9 @@
-// Memory leak detection using NEW keyword instead of new
-#ifdef _DEBUG
-	#define _CRTDBG_MAP_ALLOC
-	#define NEW new( _NORMAL_BLOCK, __FILE__, __LINE__ )
-	#include <stdlib.h>
-	#include <crtdbg.h>
-#else
-	#define NEW new
-#endif
+#include <pch.h>
+// crtdbg for memory leak
+// iostream
 
-// STD libraries
-#include <iostream>
-#include <math.h>
-
-// Other libraries
 #include "game.h"
-#include "logger.h"
 #include "timer.h"
-
-//#undef main
 
 int main(int argc, char* argv[])
 {

@@ -1,8 +1,9 @@
 #pragma once
 
-#include "SDL.h"
-#include "logger.h"
-#include <math.h>
+#include "pch.h"
+// SDL, math, logger
+
+
 
 
 class Game

@@ -1,3 +1,4 @@
+#include <pch.h>
 #include "timer.h"
 
 unsigned int Timer::Mark()
