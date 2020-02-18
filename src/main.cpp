@@ -24,6 +24,7 @@ int main(int argc, char* argv[])
 		std::cout << "Game object initialization failed!" << std::endl;
 	}
 
+
 	// Game loop
 	while (game.IsRunning()) {
 

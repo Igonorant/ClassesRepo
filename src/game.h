@@ -45,6 +45,10 @@ private:
 	Logger eventLogger = Logger("Event");
 	Logger updateLogger = Logger("Update");
 
+
+	// SDL2 Image test
+	SDL_Texture* testTexture = NULL;
+
 	// Test variable
 	int count = 0;
 };

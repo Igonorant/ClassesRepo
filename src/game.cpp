@@ -62,6 +62,11 @@ void Game::Init(const char* title, int xpos, int ypos, unsigned int width, unsig
 		sdlLogger.Log("Initialization failed...");
 	}
 
+
+	// SDL2 Image test
+	SDL_Surface* tmpSurface = IMG_Load("assets/test/test_icon_32x32.png");
+	testTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+	//SDL_FreeSurface(tmpSurface);
 }
 
 void Game::HandleEvents()
@@ -98,6 +103,9 @@ void Game::Render()
 	SDL_RenderClear(renderer);
 	
 	// Render stuff
+
+	SDL_RenderCopy(renderer, testTexture,NULL,NULL);
+
 
 	SDL_RenderPresent(renderer);
 }

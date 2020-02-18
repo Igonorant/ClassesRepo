@@ -16,6 +16,9 @@
     <Filter Include="SDL2">
       <UniqueIdentifier>{a52f47c2-d27d-4e3d-80ba-dccf4d36e754}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{217ba0c9-dcdc-417b-bf45-2796a2a5847b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\logger.cpp">
@@ -296,6 +299,9 @@
     <ClInclude Include="src\pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sdl2_image\include\SDL_image.h">
+      <Filter>SDL2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="sdl2\include\SDL_config.h.cmake">
@@ -310,6 +316,24 @@
     <None Include="SDL2.dll">
       <Filter>SDL2</Filter>
     </None>
+    <None Include="sdl2_image\lib\x64\libjpeg-9.dll">
+      <Filter>SDL2</Filter>
+    </None>
+    <None Include="sdl2_image\lib\x64\libpng16-16.dll">
+      <Filter>SDL2</Filter>
+    </None>
+    <None Include="sdl2_image\lib\x64\libtiff-5.dll">
+      <Filter>SDL2</Filter>
+    </None>
+    <None Include="sdl2_image\lib\x64\libwebp-7.dll">
+      <Filter>SDL2</Filter>
+    </None>
+    <None Include="sdl2_image\lib\x64\SDL2_image.dll">
+      <Filter>SDL2</Filter>
+    </None>
+    <None Include="sdl2_image\lib\x64\zlib1.dll">
+      <Filter>SDL2</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Library Include="sdl2\lib\x64\SDL2.lib">
@@ -318,5 +342,30 @@
     <Library Include="sdl2\lib\x64\SDL2main.lib">
       <Filter>SDL2</Filter>
     </Library>
+    <Library Include="sdl2_image\lib\x64\SDL2_image.lib">
+      <Filter>SDL2</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sdl2_image\lib\x64\LICENSE.jpeg.txt">
+      <Filter>SDL2</Filter>
+    </Text>
+    <Text Include="sdl2_image\lib\x64\LICENSE.png.txt">
+      <Filter>SDL2</Filter>
+    </Text>
+    <Text Include="sdl2_image\lib\x64\LICENSE.tiff.txt">
+      <Filter>SDL2</Filter>
+    </Text>
+    <Text Include="sdl2_image\lib\x64\LICENSE.webp.txt">
+      <Filter>SDL2</Filter>
+    </Text>
+    <Text Include="sdl2_image\lib\x64\LICENSE.zlib.txt">
+      <Filter>SDL2</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\test\lf2_freeze_all.png">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>
